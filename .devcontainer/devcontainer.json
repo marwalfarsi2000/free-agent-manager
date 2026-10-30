@@ -1,0 +1,22 @@
+{
+  "name": "Agent Zero — free Codespaces trial",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:4": {
+      "version": "latest",
+      "moby": true
+    }
+  },
+  "forwardPorts": [
+    5080
+  ],
+  "portsAttributes": {
+    "5080": {
+      "label": "Agent Zero — private web UI",
+      "onAutoForward": "openBrowser",
+      "protocol": "http"
+    }
+  },
+  "postStartCommand": "bash .devcontainer/start-agent-zero.sh",
+  "remoteUser": "vscode"
+}
